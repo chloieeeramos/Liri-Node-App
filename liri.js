@@ -24,7 +24,7 @@ function concertIt(bandQuery) {
 
             var concertData = JSON.parse(body);
 
-            var concertDT = concertData[0].datetime
+            var datetime = concertData[1].datetime
             var momentDT = moment().format('L');
 
             console.log("===============================");
@@ -41,7 +41,7 @@ function concertIt(bandQuery) {
 function spotifyIt(musicSearch) {
 
     if (musicSearch === undefined || null) {
-        musicSearch = "I Want It That Way Backstreet Boys";
+        musicSearch = "The Sign Ace of Base";
     }
 
     spotify.search({ type: 'track', query: musicSearch }, function (err, data) {
